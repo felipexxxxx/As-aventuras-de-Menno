@@ -46,7 +46,7 @@ Se o jogador errar as perguntas, Menno perde uma vida (o jogador começa com 4 v
 ## 🕹️ Como Jogar
 
 1. Utilize o joystick (integrado com o ESP32) para responder aos desafios matemáticos.
-![Imagem do joystick]("C:\Users\felip\Desktop\As aventuras de Menno\joystick.png")
+![Imagem do joystick](./joystick/joystick.png)
 2. Colete moedas e derrote inimigos para aumentar seu placar.
 3. Responda corretamente às perguntas para ganhar poderes especiais.
 4. Enfrente Chrollo na batalha final!
