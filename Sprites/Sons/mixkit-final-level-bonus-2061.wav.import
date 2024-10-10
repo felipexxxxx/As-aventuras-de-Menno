@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-final-level-bonus-2061.wav-d61d58b7e67da7779d23485b4fc6c4d2.sample"
+
+[deps]
+
+source_file="res://Sprites/Sons/mixkit-final-level-bonus-2061.wav"
+dest_files=[ "res://.import/mixkit-final-level-bonus-2061.wav-d61d58b7e67da7779d23485b4fc6c4d2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

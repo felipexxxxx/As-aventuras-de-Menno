@@ -1,0 +1,760 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Sprites/final_boss_veigar_pixelart_by_levingeart_dagz6sg-fullview.png" type="Texture" id=1]
+[ext_resource path="res://Cenas/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png" type="Texture" id=3]
+[ext_resource path="res://AtlasTexture/BossBackground3.tres" type="Texture" id=4]
+[ext_resource path="res://AtlasTexture/BossBackground1.tres" type="Texture" id=5]
+[ext_resource path="res://AtlasTexture/BossBackground6.tres" type="Texture" id=6]
+[ext_resource path="res://AtlasTexture/BossBackground5.tres" type="Texture" id=7]
+[ext_resource path="res://AtlasTexture/BossBackground4.tres" type="Texture" id=8]
+[ext_resource path="res://AtlasTexture/BossBackground2.tres" type="Texture" id=9]
+[ext_resource path="res://AtlasTexture/VidaBoss.tres" type="Texture" id=10]
+[ext_resource path="res://AtlasTexture/VidaBossVazia.tres" type="Texture" id=11]
+[ext_resource path="res://Cenas/Boss.gd" type="Script" id=12]
+[ext_resource path="res://Sprites/font/CooperBits.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Sprites/Sons/scary_halloween_ambience_var2.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Sprites/Sons/little_robot_sound_factory_Jingle_Win_Synth_00.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sprites/Sons/sfx-defeat3.wav" type="AudioStream" id=16]
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="TileSet" id=36]
+0/name = "simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 64, 48, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 448, 64, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 16, 112, 128 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="TileSet" id=2]
+0/name = "final_boss_veigar_pixelart_by_levingeart_dagz6sg-fullview.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 32, 0, 128, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="DynamicFont" id=38]
+size = 18
+outline_color = Color( 0, 0, 0, 0 )
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=64]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=65]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=66]
+bg_color = Color( 0.117647, 0.564706, 1, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=67]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.117647, 0.564706, 1, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=68]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=69]
+Button/styles/disabled = SubResource( 64 )
+Button/styles/focus = SubResource( 65 )
+Button/styles/hover = SubResource( 66 )
+Button/styles/normal = SubResource( 67 )
+Button/styles/pressed = SubResource( 68 )
+
+[sub_resource type="DynamicFont" id=45]
+size = 18
+font_data = ExtResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=58]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=59]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=60]
+bg_color = Color( 0, 0.501961, 0, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=61]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0.501961, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=62]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=63]
+Button/styles/disabled = SubResource( 58 )
+Button/styles/focus = SubResource( 59 )
+Button/styles/hover = SubResource( 60 )
+Button/styles/normal = SubResource( 61 )
+Button/styles/pressed = SubResource( 62 )
+
+[sub_resource type="StyleBoxFlat" id=52]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=53]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=54]
+bg_color = Color( 1, 1, 0, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=55]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 1, 1, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=56]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=57]
+Button/styles/disabled = SubResource( 52 )
+Button/styles/focus = SubResource( 53 )
+Button/styles/hover = SubResource( 54 )
+Button/styles/normal = SubResource( 55 )
+Button/styles/pressed = SubResource( 56 )
+
+[sub_resource type="StyleBoxFlat" id=46]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=47]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=48]
+bg_color = Color( 0.803922, 0.360784, 0.360784, 0.392157 )
+
+[sub_resource type="StyleBoxFlat" id=49]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=50]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=51]
+Button/styles/disabled = SubResource( 46 )
+Button/styles/focus = SubResource( 47 )
+Button/styles/hover = SubResource( 48 )
+Button/styles/normal = SubResource( 49 )
+Button/styles/pressed = SubResource( 50 )
+
+[sub_resource type="DynamicFont" id=70]
+size = 18
+font_data = ExtResource( 13 )
+
+[node name="Boss" type="Node2D"]
+z_as_relative = false
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 492, 299 )
+scale = Vector2( 1.66016, 1.70718 )
+frames = SubResource( 37 )
+frame = 2
+playing = true
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -54, 20 )
+tile_set = SubResource( 36 )
+cell_size = Vector2( 32, 14 )
+cell_quadrant_size = 14
+format = 1
+tile_data = PoolIntArray( 1703938, 2, 0 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2( -205.2, 76 )
+scale = Vector2( 3, 3 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 34, 0, 0, 196608, 2, 0 )
+
+[node name="Vida1" type="Sprite" parent="."]
+modulate = Color( 0, 0.831373, 1, 1 )
+position = Vector2( 770, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 10 )
+
+[node name="VidaVazia1" type="Sprite" parent="."]
+position = Vector2( 770, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 11 )
+
+[node name="Vida2" type="Sprite" parent="."]
+modulate = Color( 0, 0.831373, 1, 1 )
+position = Vector2( 830, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 10 )
+
+[node name="VidaVazia2" type="Sprite" parent="."]
+position = Vector2( 830, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 11 )
+
+[node name="Vida3" type="Sprite" parent="."]
+modulate = Color( 0, 0.831373, 1, 1 )
+position = Vector2( 890, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 10 )
+
+[node name="VidaVazia3" type="Sprite" parent="."]
+position = Vector2( 890, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 11 )
+
+[node name="Vida4" type="Sprite" parent="."]
+modulate = Color( 0, 0.831373, 1, 1 )
+position = Vector2( 950, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 10 )
+
+[node name="VidaVazia4" type="Sprite" parent="."]
+position = Vector2( 950, 53 )
+scale = Vector2( 0.641026, 0.641026 )
+texture = ExtResource( 11 )
+
+[node name="Pergunta1" type="Label" parent="."]
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="certo1" type="Button" parent="Pergunta1"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "33+33=66"
+
+[node name="errado1_1" type="Button" parent="Pergunta1"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "48+33=50"
+
+[node name="errado1_2" type="Button" parent="Pergunta1"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "17+15=40"
+
+[node name="errado1_3" type="Button" parent="Pergunta1"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "24+28=54"
+
+[node name="Pergunta2" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="certo2" type="Button" parent="Pergunta2"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "29-17=12"
+
+[node name="errado2_1" type="Button" parent="Pergunta2"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "42-35=11"
+
+[node name="errado2_2" type="Button" parent="Pergunta2"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "35-18=19"
+
+[node name="errado2_3" type="Button" parent="Pergunta2"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "30-18=14"
+
+[node name="Pergunta3" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFãO FINAL!"
+
+[node name="certo3" type="Button" parent="Pergunta3"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "7x6=42"
+
+[node name="errado3_1" type="Button" parent="Pergunta3"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "5x8=42"
+
+[node name="errado3_2" type="Button" parent="Pergunta3"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "4x3=15"
+
+[node name="errado3_3" type="Button" parent="Pergunta3"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "6x6=30"
+
+[node name="Pergunta4" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="errado4_1" type="Button" parent="Pergunta4"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 70 )
+text = "4÷4=0"
+
+[node name="errado4_2" type="Button" parent="Pergunta4"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "12÷3=5"
+
+[node name="certo4" type="Button" parent="Pergunta4"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "21÷3=7"
+
+[node name="errado4_3" type="Button" parent="Pergunta4"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "24÷4=4"
+
+[node name="Pergunta5" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="errado5_1" type="Button" parent="Pergunta5"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 70 )
+text = "39+22=51"
+
+[node name="certo5" type="Button" parent="Pergunta5"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "39+22=61"
+
+[node name="errado5_2" type="Button" parent="Pergunta5"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "29+29=59"
+
+[node name="errado5_3" type="Button" parent="Pergunta5"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "19+12=33"
+
+[node name="Pergunta6" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="certo6" type="Button" parent="Pergunta6"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 70 )
+text = "40-19=21"
+
+[node name="errado6_1" type="Button" parent="Pergunta6"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "49-27=30"
+
+[node name="errado6_2" type="Button" parent="Pergunta6"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "26-18=10"
+
+[node name="errado6_3" type="Button" parent="Pergunta6"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "33-12=11"
+
+[node name="Pergunta7" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="errado7_1" type="Button" parent="Pergunta7"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 70 )
+text = "9x9=72"
+
+[node name="certo7" type="Button" parent="Pergunta7"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "9x5=45"
+
+[node name="errado7_2" type="Button" parent="Pergunta7"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "7x4=30"
+
+[node name="errado7_3" type="Button" parent="Pergunta7"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "7x9=52"
+
+[node name="Pergunta8" type="Label" parent="."]
+visible = false
+margin_left = 92.0
+margin_top = 135.0
+margin_right = 852.0
+margin_bottom = 155.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 38 )
+text = "MARQUE A ALTERNATIVA CORRETA PARA DERROTAR O CHEFAO FINAL!"
+
+[node name="errado8_1" type="Button" parent="Pergunta8"]
+margin_left = 291.146
+margin_top = 85.0
+margin_right = 487.146
+margin_bottom = 143.0
+rect_pivot_offset = Vector2( 157, 0 )
+theme = SubResource( 69 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 70 )
+text = "21÷7=7"
+
+[node name="errado8_2" type="Button" parent="Pergunta8"]
+margin_left = 291.146
+margin_top = 152.0
+margin_right = 487.146
+margin_bottom = 209.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "27÷9=2"
+
+[node name="certo8" type="Button" parent="Pergunta8"]
+margin_left = 291.146
+margin_top = 218.0
+margin_right = 487.146
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 57 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "40÷8=5"
+
+[node name="errado8_3" type="Button" parent="Pergunta8"]
+margin_left = 292.146
+margin_top = 287.0
+margin_right = 488.146
+margin_bottom = 345.0
+rect_pivot_offset = Vector2( 207, 20 )
+theme = SubResource( 51 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 45 )
+text = "33÷3=10"
+
+[node name="AudioTemaBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -20.0
+
+[node name="AudioAcertoPerguntasBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -9.0
+
+[node name="AudioErradoPerguntaBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -10.0
+
+[connection signal="pressed" from="Pergunta1/certo1" to="." method="_on_certo1_pressed"]
+[connection signal="pressed" from="Pergunta1/errado1_1" to="." method="_on_errado1_1_pressed"]
+[connection signal="pressed" from="Pergunta1/errado1_2" to="." method="_on_errado1_2_pressed"]
+[connection signal="pressed" from="Pergunta1/errado1_3" to="." method="_on_errado1_3_pressed"]
+[connection signal="pressed" from="Pergunta2/certo2" to="." method="_on_certo2_pressed"]
+[connection signal="pressed" from="Pergunta2/errado2_1" to="." method="_on_errado2_1_pressed"]
+[connection signal="pressed" from="Pergunta2/errado2_2" to="." method="_on_errado2_2_pressed"]
+[connection signal="pressed" from="Pergunta2/errado2_3" to="." method="_on_errado2_3_pressed"]
+[connection signal="pressed" from="Pergunta3/certo3" to="." method="_on_certo3_pressed"]
+[connection signal="pressed" from="Pergunta3/errado3_1" to="." method="_on_errado3_1_pressed"]
+[connection signal="pressed" from="Pergunta3/errado3_2" to="." method="_on_errado3_2_pressed"]
+[connection signal="pressed" from="Pergunta3/errado3_3" to="." method="_on_errado3_3_pressed"]
+[connection signal="pressed" from="Pergunta4/errado4_1" to="." method="_on_errado4_1_pressed"]
+[connection signal="pressed" from="Pergunta4/errado4_2" to="." method="_on_errado4_2_pressed"]
+[connection signal="pressed" from="Pergunta4/certo4" to="." method="_on_certo4_pressed"]
+[connection signal="pressed" from="Pergunta4/errado4_3" to="." method="_on_errado4_3_pressed"]
+[connection signal="pressed" from="Pergunta5/errado5_1" to="." method="_on_errado5_1_pressed"]
+[connection signal="pressed" from="Pergunta5/certo5" to="." method="_on_certo5_pressed"]
+[connection signal="pressed" from="Pergunta5/errado5_2" to="." method="_on_errado5_2_pressed"]
+[connection signal="pressed" from="Pergunta5/errado5_3" to="." method="_on_errado5_3_pressed"]
+[connection signal="pressed" from="Pergunta6/certo6" to="." method="_on_certo6_pressed"]
+[connection signal="pressed" from="Pergunta6/errado6_1" to="." method="_on_errado6_1_pressed"]
+[connection signal="pressed" from="Pergunta6/errado6_2" to="." method="_on_errado6_2_pressed"]
+[connection signal="pressed" from="Pergunta6/errado6_3" to="." method="_on_errado6_3_pressed"]
+[connection signal="pressed" from="Pergunta7/errado7_1" to="." method="_on_errado7_1_pressed"]
+[connection signal="pressed" from="Pergunta7/certo7" to="." method="_on_certo7_pressed"]
+[connection signal="pressed" from="Pergunta7/errado7_2" to="." method="_on_errado7_2_pressed"]
+[connection signal="pressed" from="Pergunta7/errado7_3" to="." method="_on_errado7_3_pressed"]
+[connection signal="pressed" from="Pergunta8/errado8_1" to="." method="_on_errado8_1_pressed"]
+[connection signal="pressed" from="Pergunta8/errado8_2" to="." method="_on_errado8_2_pressed"]
+[connection signal="pressed" from="Pergunta8/certo8" to="." method="_on_certo8_pressed"]
+[connection signal="pressed" from="Pergunta8/errado8_3" to="." method="_on_errado8_3_pressed"]

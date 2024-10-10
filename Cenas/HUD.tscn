@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/font/CooperBits.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://AtlasTexture/Vida.tres" type="Texture" id=2]
+[ext_resource path="res://AtlasTexture/VidaVazia.tres" type="Texture" id=3]
+[ext_resource path="res://Cenas/HUD.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="vida1" type="Sprite" parent="."]
+position = Vector2( 38, 34 )
+texture = ExtResource( 2 )
+
+[node name="vidaperdida1" type="Sprite" parent="."]
+position = Vector2( 38, 34 )
+texture = ExtResource( 3 )
+
+[node name="vida2" type="Sprite" parent="."]
+position = Vector2( 68, 34 )
+texture = ExtResource( 2 )
+
+[node name="vidaperdida2" type="Sprite" parent="."]
+position = Vector2( 68, 34 )
+texture = ExtResource( 3 )
+
+[node name="vida3" type="Sprite" parent="."]
+position = Vector2( 98, 34 )
+texture = ExtResource( 2 )
+
+[node name="vidaperdida3" type="Sprite" parent="."]
+position = Vector2( 98, 34 )
+texture = ExtResource( 3 )
+
+[node name="vida4" type="Sprite" parent="."]
+position = Vector2( 128, 34 )
+texture = ExtResource( 2 )
+
+[node name="vidaperdida4" type="Sprite" parent="."]
+position = Vector2( 128, 34 )
+texture = ExtResource( 3 )
+
+[node name="Pontos" type="Label" parent="."]
+margin_left = 525.0
+margin_top = 18.0
+margin_right = 551.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 1, 0.866667, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+
+[node name="Pontos0" type="Label" parent="."]
+margin_left = 397.0
+margin_top = 18.0
+margin_right = 715.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Pontos: "
+
+[connection signal="script_changed" from="." to="." method="_on_HUD_script_changed"]

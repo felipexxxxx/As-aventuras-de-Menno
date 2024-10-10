@@ -1,0 +1,2017 @@
+[gd_scene load_steps=65 format=2]
+
+[ext_resource path="res://Cenas/Inimigo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cenas/Bloco.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cenas/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Cenas/Moeda.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Cenas/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Cenas/Level.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/font/CooperBits.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://AtlasTexture/Portal1.tres" type="Texture" id=9]
+[ext_resource path="res://AtlasTexture/Portal4.tres" type="Texture" id=10]
+[ext_resource path="res://parallax_forest_pack/bulkhead-walls-files/bulkhead-wallsx1.png" type="Texture" id=11]
+[ext_resource path="res://AtlasTexture/Portal5.tres" type="Texture" id=12]
+[ext_resource path="res://AtlasTexture/Portal2.tres" type="Texture" id=13]
+[ext_resource path="res://Sprites/font/04B_30__.TTF" type="DynamicFontData" id=14]
+[ext_resource path="res://Sprites/Sons/Sounds_level_completed.wav" type="AudioStream" id=15]
+[ext_resource path="res://Cenas/Lava.tscn" type="PackedScene" id=16]
+[ext_resource path="res://AtlasTexture/Portal3.tres" type="Texture" id=17]
+[ext_resource path="res://Sprites/light.jpg" type="Texture" id=18]
+[ext_resource path="res://Cenas/plataformamovel.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sprites/Sons/music_zapsplat_game_music_action_mild_agressive_bass_synth_breakbeat_027.ogg" type="AudioStream" id=20]
+[ext_resource path="res://Sprites/Sons/mixkit-positive-game-alert-3151.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sprites/Sons/mixkit-final-level-bonus-2061.wav" type="AudioStream" id=22]
+[ext_resource path="res://Sprites/Sons/mixkit-winning-a-coin-video-game-2069.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sprites/Sons/kill-type-sound-gaming-sound-fx.wav" type="AudioStream" id=24]
+[ext_resource path="res://Sprites/Sons/sfx-pop.wav" type="AudioStream" id=25]
+[ext_resource path="res://Sprites/Sons/smw_lava_bubble.wav" type="AudioStream" id=26]
+
+[sub_resource type="TileSet" id=52]
+0/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 416, 192, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 448, 192, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 2"
+2/texture = ExtResource( 7 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 480, 192, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 3"
+3/texture = ExtResource( 7 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 512, 192, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 672, 64, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 5"
+5/texture = ExtResource( 7 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 672, 96, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 672, 128, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 7"
+7/texture = ExtResource( 7 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 672, 160, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 8"
+8/texture = ExtResource( 7 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 288, 288, 32, 32 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 9"
+9/texture = ExtResource( 7 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 320, 288, 32, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 10"
+10/texture = ExtResource( 7 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 352, 288, 32, 32 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 11"
+11/texture = ExtResource( 7 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 640, 320, 32, 32 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 12"
+12/texture = ExtResource( 7 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 672, 320, 32, 32 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 13"
+13/texture = ExtResource( 7 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 672, 288, 32, 32 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 14"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 640, 288, 32, 32 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 15"
+15/texture = ExtResource( 7 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 608, 288, 32, 32 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 16"
+16/texture = ExtResource( 7 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 704, 64, 32, 32 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
+17/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 17"
+17/texture = ExtResource( 7 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 704, 96, 32, 32 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape_one_way = false
+17/shape_one_way_margin = 0.0
+17/shapes = [  ]
+17/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=60]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=53]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=54]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=55]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=56]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=57]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=58]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=59]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=34]
+3/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 3"
+3/texture = ExtResource( 7 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 480, 64, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 512, 64, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 55 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 55 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 5"
+5/texture = ExtResource( 7 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 448, 64, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 56 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 56 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 448, 32, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 57 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 57 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 7"
+7/texture = ExtResource( 7 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 480, 32, 32, 32 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 58 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 58 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 8"
+8/texture = ExtResource( 7 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 512, 32, 32, 32 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 59 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 59 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 9"
+9/texture = ExtResource( 7 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 448, 96, 32, 32 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 10"
+10/texture = ExtResource( 7 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 480, 96, 32, 32 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 11"
+11/texture = ExtResource( 7 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 512, 96, 32, 32 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 12"
+12/texture = ExtResource( 7 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 480, 32, 32, 32 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 13"
+13/texture = ExtResource( 7 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 576, 96, 32, 32 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 14"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 672, 32, 32, 32 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 15"
+15/texture = ExtResource( 7 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 608, 96, 32, 32 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+16/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 16"
+16/texture = ExtResource( 7 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 640, 128, 32, 32 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 60 )
+16/shape_one_way = false
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 60 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+16/z_index = 0
+17/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 17"
+17/texture = ExtResource( 7 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 640, 160, 32, 32 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 53 )
+17/shape_one_way = false
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 53 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+17/z_index = 0
+18/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 18"
+18/texture = ExtResource( 7 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 640, 128, 32, 32 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape = SubResource( 54 )
+18/shape_one_way = false
+18/shape_one_way_margin = 1.0
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 54 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+18/z_index = 0
+19/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 19"
+19/texture = ExtResource( 7 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 288, 288, 32, 32 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape_one_way = false
+19/shape_one_way_margin = 0.0
+19/shapes = [  ]
+19/z_index = 0
+20/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 20"
+20/texture = ExtResource( 7 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 320, 288, 32, 32 )
+20/tile_mode = 0
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 0, 0 )
+20/shape_offset = Vector2( 0, 0 )
+20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape_one_way = false
+20/shape_one_way_margin = 0.0
+20/shapes = [  ]
+20/z_index = 0
+21/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 21"
+21/texture = ExtResource( 7 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 544, 288, 32, 32 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape_one_way = false
+21/shape_one_way_margin = 0.0
+21/shapes = [  ]
+21/z_index = 0
+22/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 22"
+22/texture = ExtResource( 7 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 576, 288, 32, 32 )
+22/tile_mode = 0
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape_one_way = false
+22/shape_one_way_margin = 0.0
+22/shapes = [  ]
+22/z_index = 0
+23/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 23"
+23/texture = ExtResource( 7 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 704, 64, 32, 32 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shape_offset = Vector2( 0, 0 )
+23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape_one_way = false
+23/shape_one_way_margin = 0.0
+23/shapes = [  ]
+23/z_index = 0
+24/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 24"
+24/texture = ExtResource( 7 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 704, 96, 32, 32 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
+25/name = "simple_platformer_tileset_by_kucingbudhug_d9iyp1s.png 25"
+25/texture = ExtResource( 7 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 352, 288, 32, 32 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shape_offset = Vector2( 0, 0 )
+25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape_one_way = false
+25/shape_one_way_margin = 0.0
+25/shapes = [  ]
+25/z_index = 0
+
+[sub_resource type="SpriteFrames" id=65]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=66]
+radius = 34.0
+height = 64.0
+
+[sub_resource type="DynamicFont" id=61]
+size = 14
+font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxFlat" id=43]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_color = Color( 0.572549, 0.8, 0.647059, 1 )
+
+[sub_resource type="StyleBoxFlat" id=44]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0.6, 0.6, 0, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=41]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=42]
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 43 )
+Button/styles/focus = SubResource( 44 )
+Button/styles/hover = SubResource( 39 )
+Button/styles/normal = SubResource( 40 )
+Button/styles/pressed = SubResource( 41 )
+
+[sub_resource type="DynamicFont" id=67]
+size = 12
+font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxFlat" id=68]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=45]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=46]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=47]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=48]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=49]
+Button/styles/disabled = SubResource( 68 )
+Button/styles/focus = SubResource( 45 )
+Button/styles/hover = SubResource( 46 )
+Button/styles/normal = SubResource( 47 )
+Button/styles/pressed = SubResource( 48 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 12
+font_data = ExtResource( 14 )
+
+[sub_resource type="Theme" id=51]
+
+[sub_resource type="DynamicFont" id=62]
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=35]
+Button/styles/disabled = SubResource( 24 )
+Button/styles/focus = SubResource( 25 )
+Button/styles/hover = SubResource( 26 )
+Button/styles/normal = SubResource( 27 )
+Button/styles/pressed = SubResource( 28 )
+
+[sub_resource type="DynamicFont" id=36]
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=63]
+size = 18
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=64]
+size = 18
+font_data = ExtResource( 8 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 544, 0 )
+
+[node name="1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 0, -55 )
+scale = Vector2( 2, 2.26786 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="decoraçao" type="TileMap" parent="."]
+tile_set = SubResource( 52 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -131064, 4, 0, -131045, 4, 0, -131039, 4, 0, -131036, 4, 0, -131029, 4, 0, -131023, 4, 0, -131013, 4, 0, -131009, 4, 0, -130994, 4, 0, -130990, 4, 0, -130983, 4, 0, -130964, 4, 0, -130958, 4, 0, -65528, 5, 0, -65509, 5, 0, -65503, 5, 0, -65500, 5, 0, -65493, 5, 0, -65487, 5, 0, -65477, 5, 0, -65473, 5, 0, -65458, 5, 0, -65454, 5, 0, -65447, 5, 0, -65428, 5, 0, -65422, 5, 0, 8, 5, 0, 27, 5, 0, 33, 5, 0, 36, 5, 0, 43, 5, 0, 49, 5, 0, 59, 5, 0, 63, 5, 0, 78, 5, 0, 82, 5, 0, 89, 5, 0, 108, 5, 0, 114, 5, 0, 65544, 5, 0, 65563, 5, 0, 65569, 5, 0, 65572, 5, 0, 65579, 5, 0, 65585, 5, 0, 65595, 5, 0, 65599, 5, 0, 65614, 5, 0, 65618, 5, 0, 65625, 5, 0, 65644, 5, 0, 65650, 5, 0, 131080, 5, 0, 131099, 5, 0, 131105, 5, 0, 131108, 5, 0, 131115, 5, 0, 131121, 5, 0, 131131, 5, 0, 131135, 5, 0, 131150, 5, 0, 131154, 5, 0, 131161, 5, 0, 131180, 5, 0, 131186, 5, 0, 196616, 5, 0, 196635, 5, 0, 196641, 5, 0, 196644, 5, 0, 196651, 6, 0, 196657, 6, 0, 196667, 5, 0, 196671, 5, 0, 196686, 5, 0, 196690, 5, 0, 196697, 5, 0, 196716, 5, 0, 196722, 5, 0, 262152, 5, 0, 262171, 5, 0, 262177, 5, 0, 262180, 5, 0, 262187, 7, 0, 262193, 7, 0, 262203, 5, 0, 262207, 5, 0, 262222, 5, 0, 262226, 5, 0, 262233, 5, 0, 262252, 5, 0, 262258, 5, 0, 327688, 5, 0, 327707, 5, 0, 327713, 6, 0, 327716, 6, 0, 327739, 5, 0, 327743, 5, 0, 327758, 5, 0, 327762, 5, 0, 327769, 5, 0, 327788, 6, 0, 327794, 6, 0, 393224, 6, 0, 393243, 6, 0, 393249, 7, 0, 393250, 15, 0, 393252, 7, 0, 393275, 5, 0, 393279, 5, 0, 393294, 6, 0, 393298, 6, 0, 393305, 5, 0, 393324, 7, 0, 393330, 7, 0, 458760, 7, 0, 458769, 14, 0, 458770, 13, 0, 458779, 7, 0, 458803, 15, 0, 458811, 5, 0, 458815, 5, 0, 458830, 7, 0, 458834, 7, 0, 458841, 5, 0, 524295, 15, 0, 524296, 7, 0, 524305, 11, 0, 524306, 12, 0, 524315, 7, 0, 524316, 15, 0, 524347, 5, 0, 524351, 5, 0, 524377, 6, 0, 524379, 14, 0, 524380, 13, 0, 589883, 6, 0, 589887, 6, 0, 589913, 7, 0, 589915, 11, 0, 589916, 12, 0, 589959, 14, 0, 589960, 13, 0, 655419, 7, 0, 655423, 7, 0, 655495, 11, 0, 655496, 12, 0 )
+
+[node name="decoraçao2" type="TileMap" parent="."]
+tile_set = SubResource( 52 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -131064, 4, 0, -131045, 4, 0, -131039, 4, 0, -131036, 4, 0, -131029, 4, 0, -131023, 4, 0, -131013, 4, 0, -131009, 4, 0, -130994, 4, 0, -130990, 4, 0, -130983, 4, 0, -130964, 4, 0, -130958, 4, 0, -65528, 5, 0, -65509, 5, 0, -65503, 5, 0, -65500, 5, 0, -65493, 5, 0, -65487, 5, 0, -65477, 5, 0, -65473, 5, 0, -65458, 5, 0, -65454, 5, 0, -65447, 5, 0, -65428, 5, 0, -65422, 5, 0, 8, 5, 0, 27, 5, 0, 33, 5, 0, 36, 5, 0, 43, 5, 0, 49, 5, 0, 59, 5, 0, 63, 5, 0, 78, 5, 0, 82, 5, 0, 89, 5, 0, 108, 5, 0, 114, 5, 0, 65544, 5, 0, 65563, 5, 0, 65569, 5, 0, 65572, 5, 0, 65579, 5, 0, 65585, 5, 0, 65595, 5, 0, 65599, 5, 0, 65614, 5, 0, 65618, 5, 0, 65625, 5, 0, 65644, 5, 0, 65650, 5, 0, 131080, 5, 0, 131099, 5, 0, 131105, 5, 0, 131108, 5, 0, 131115, 5, 0, 131121, 5, 0, 131131, 5, 0, 131135, 5, 0, 131150, 5, 0, 131154, 5, 0, 131161, 5, 0, 131180, 5, 0, 131186, 5, 0, 196616, 5, 0, 196635, 5, 0, 196641, 5, 0, 196644, 5, 0, 196651, 6, 0, 196657, 6, 0, 196667, 5, 0, 196671, 5, 0, 196686, 5, 0, 196690, 5, 0, 196697, 5, 0, 196716, 5, 0, 196722, 5, 0, 262152, 5, 0, 262171, 5, 0, 262177, 5, 0, 262180, 5, 0, 262187, 7, 0, 262193, 7, 0, 262203, 5, 0, 262207, 5, 0, 262222, 5, 0, 262226, 5, 0, 262233, 5, 0, 262252, 5, 0, 262258, 5, 0, 327688, 5, 0, 327707, 5, 0, 327713, 6, 0, 327716, 6, 0, 327739, 5, 0, 327743, 5, 0, 327758, 5, 0, 327762, 5, 0, 327769, 5, 0, 327788, 6, 0, 327794, 6, 0, 393224, 6, 0, 393243, 6, 0, 393249, 7, 0, 393250, 15, 0, 393252, 7, 0, 393275, 5, 0, 393279, 5, 0, 393294, 6, 0, 393298, 6, 0, 393305, 5, 0, 393324, 7, 0, 393330, 7, 0, 458760, 7, 0, 458769, 14, 0, 458770, 13, 0, 458779, 7, 0, 458803, 15, 0, 458811, 5, 0, 458815, 5, 0, 458830, 7, 0, 458834, 7, 0, 458841, 5, 0, 524295, 15, 0, 524296, 7, 0, 524305, 11, 0, 524306, 12, 0, 524315, 7, 0, 524316, 15, 0, 524347, 5, 0, 524351, 5, 0, 524377, 6, 0, 524379, 14, 0, 524380, 13, 0, 589883, 6, 0, 589887, 6, 0, 589913, 7, 0, 589915, 11, 0, 589916, 12, 0, 589959, 14, 0, 589960, 13, 0, 655419, 7, 0, 655423, 7, 0, 655495, 11, 0, 655496, 12, 0 )
+
+[node name="plataforma" type="TileMap" parent="."]
+position = Vector2( 3.05176e-05, 1.52588e-05 )
+tile_set = SubResource( 34 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -393110, 17, 0, -327624, 17, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131122, 6, 0, 131123, 8, 0, 196658, 5, 0, 196659, 4, 0, 262165, 1, 0, 262194, 5, 0, 262195, 4, 0, 327722, 6, 0, 327723, 7, 0, 327724, 7, 0, 327725, 7, 0, 327726, 7, 0, 327727, 7, 0, 327728, 7, 0, 327729, 7, 0, 327730, 13, 0, 327731, 4, 0, 393255, 16, 0, 393256, 16, 0, 393258, 5, 0, 393259, 3, 0, 393260, 3, 0, 393261, 3, 0, 393262, 3, 0, 393263, 3, 0, 393264, 3, 0, 393265, 3, 0, 393266, 3, 0, 393267, 4, 0, 393325, 22, 0, 393331, 21, 0, 393332, 6, 0, 393333, 7, 0, 393334, 7, 0, 393335, 7, 0, 393336, 7, 0, 393337, 8, 0, 458784, 6, 0, 458785, 7, 0, 458786, 7, 0, 458787, 7, 0, 458788, 7, 0, 458789, 8, 0, 458794, 5, 0, 458795, 3, 0, 458796, 3, 0, 458797, 3, 0, 458798, 13, 0, 458799, 3, 0, 458800, 3, 0, 458801, 3, 0, 458802, 3, 0, 458803, 4, 0, 458828, 22, 0, 458859, 6, 0, 458860, 7, 0, 458861, 7, 0, 458862, 7, 0, 458863, 7, 0, 458864, 7, 0, 458865, 7, 0, 458866, 7, 0, 458867, 7, 0, 458868, 13, 0, 458869, 3, 0, 458870, 3, 0, 458871, 3, 0, 458872, 3, 0, 458873, 4, 0, 458876, 16, 0, 458877, 16, 0, 524318, 16, 0, 524320, 5, 0, 524321, 13, 0, 524322, 3, 0, 524323, 3, 0, 524324, 3, 0, 524325, 4, 0, 524330, 5, 0, 524331, 3, 0, 524332, 3, 0, 524333, 3, 0, 524334, 3, 0, 524335, 3, 0, 524336, 3, 0, 524337, 3, 0, 524338, 3, 0, 524339, 15, 0, 524340, 7, 0, 524341, 7, 0, 524342, 7, 0, 524343, 7, 0, 524344, 7, 0, 524345, 8, 0, 524360, 16, 0, 524361, 16, 0, 524364, 6, 0, 524365, 7, 0, 524366, 7, 0, 524367, 7, 0, 524368, 7, 0, 524369, 7, 0, 524370, 7, 0, 524371, 8, 0, 524395, 5, 0, 524396, 3, 0, 524397, 3, 0, 524398, 3, 0, 524399, 3, 0, 524400, 3, 0, 524401, 3, 0, 524402, 3, 0, 524403, 3, 0, 524404, 3, 0, 524405, 3, 0, 524406, 3, 0, 524407, 15, 0, 524408, 3, 0, 524409, 4, 0, 589826, 6, 0, 589827, 7, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 589833, 7, 0, 589834, 7, 0, 589835, 7, 0, 589836, 7, 0, 589837, 7, 0, 589838, 7, 0, 589839, 7, 0, 589840, 7, 0, 589841, 7, 0, 589842, 7, 0, 589843, 7, 0, 589844, 7, 0, 589845, 7, 0, 589846, 7, 0, 589847, 7, 0, 589848, 7, 0, 589849, 7, 0, 589850, 7, 0, 589851, 7, 0, 589852, 8, 0, 589856, 5, 0, 589857, 3, 0, 589858, 3, 0, 589859, 15, 0, 589860, 3, 0, 589861, 4, 0, 589866, 5, 0, 589867, 3, 0, 589868, 3, 0, 589869, 3, 0, 589870, 3, 0, 589871, 3, 0, 589872, 3, 0, 589873, 3, 0, 589874, 3, 0, 589875, 3, 0, 589876, 3, 0, 589877, 3, 0, 589878, 3, 0, 589879, 3, 0, 589880, 3, 0, 589881, 4, 0, 589893, 16, 0, 589894, 16, 0, 589900, 5, 0, 589901, 3, 0, 589902, 3, 0, 589903, 3, 0, 589904, 3, 0, 589905, 3, 0, 589906, 3, 0, 589907, 4, 0, 589931, 5, 0, 589932, 3, 0, 589933, 15, 0, 589934, 3, 0, 589935, 3, 0, 589936, 3, 0, 589937, 3, 0, 589938, 3, 0, 589939, 3, 0, 589940, 13, 0, 589941, 3, 0, 589942, 3, 0, 589943, 3, 0, 589944, 3, 0, 589945, 4, 0, 589952, 16, 0, 589953, 16, 0, 655362, 5, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 15, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 655383, 3, 0, 655384, 3, 0, 655385, 3, 0, 655386, 3, 0, 655387, 3, 0, 655388, 4, 0, 655392, 5, 0, 655393, 3, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655397, 4, 0, 655402, 5, 0, 655403, 3, 0, 655404, 3, 0, 655405, 15, 0, 655406, 3, 0, 655407, 3, 0, 655408, 3, 0, 655409, 3, 0, 655410, 3, 0, 655411, 3, 0, 655412, 3, 0, 655413, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 4, 0, 655418, 19, 0, 655419, 20, 0, 655420, 20, 0, 655421, 20, 0, 655422, 20, 0, 655423, 20, 0, 655424, 25, 0, 655426, 16, 0, 655427, 16, 0, 655436, 5, 0, 655437, 3, 0, 655438, 3, 0, 655439, 3, 0, 655440, 3, 0, 655441, 3, 0, 655442, 3, 0, 655443, 4, 0, 655447, 6, 0, 655448, 7, 0, 655449, 7, 0, 655450, 7, 0, 655451, 7, 0, 655452, 7, 0, 655453, 8, 0, 655465, 6, 0, 655466, 7, 0, 655467, 13, 0, 655468, 3, 0, 655469, 3, 0, 655470, 3, 0, 655471, 3, 0, 655472, 3, 0, 655473, 3, 0, 655474, 3, 0, 655475, 3, 0, 655476, 3, 0, 655477, 3, 0, 655478, 3, 0, 655479, 3, 0, 655480, 3, 0, 655481, 4, 0, 655494, 21, 0, 655499, 22, 0, 655500, 22, 0, 720898, 5, 0, 720899, 3, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 3, 0, 720908, 3, 0, 720909, 3, 0, 720910, 3, 0, 720911, 3, 0, 720912, 3, 0, 720913, 3, 0, 720914, 3, 0, 720915, 3, 0, 720916, 3, 0, 720917, 3, 0, 720918, 3, 0, 720919, 3, 0, 720920, 13, 0, 720921, 3, 0, 720922, 3, 0, 720923, 3, 0, 720924, 4, 0, 720928, 5, 0, 720929, 3, 0, 720930, 3, 0, 720931, 3, 0, 720932, 3, 0, 720933, 4, 0, 720938, 5, 0, 720939, 3, 0, 720940, 3, 0, 720941, 3, 0, 720942, 3, 0, 720943, 3, 0, 720944, 3, 0, 720945, 3, 0, 720946, 3, 0, 720947, 3, 0, 720948, 3, 0, 720949, 3, 0, 720950, 3, 0, 720951, 3, 0, 720952, 3, 0, 720953, 15, 0, 720954, 7, 0, 720955, 7, 0, 720956, 7, 0, 720957, 7, 0, 720958, 7, 0, 720959, 7, 0, 720960, 8, 0, 720972, 5, 0, 720973, 3, 0, 720974, 3, 0, 720975, 3, 0, 720976, 3, 0, 720977, 3, 0, 720978, 3, 0, 720979, 4, 0, 720983, 5, 0, 720984, 3, 0, 720985, 3, 0, 720986, 3, 0, 720987, 3, 0, 720988, 3, 0, 720989, 4, 0, 721001, 5, 0, 721002, 3, 0, 721003, 3, 0, 721004, 3, 0, 721005, 3, 0, 721006, 3, 0, 721007, 3, 0, 721008, 3, 0, 721009, 3, 0, 721010, 3, 0, 721011, 3, 0, 721012, 3, 0, 721013, 3, 0, 721014, 15, 0, 721015, 3, 0, 721016, 3, 0, 721017, 4, 0, 721027, 6, 0, 721028, 7, 0, 721029, 7, 0, 721030, 7, 0, 721031, 7, 0, 721032, 7, 0, 721033, 7, 0, 721034, 7, 0, 721035, 7, 0, 721036, 7, 0, 721037, 7, 0, 721038, 7, 0, 721039, 7, 0, 721040, 7, 0, 721041, 7, 0, 721042, 7, 0, 721043, 7, 0, 721044, 7, 0, 721045, 7, 0, 721046, 7, 0, 721047, 7, 0, 721048, 7, 0, 721049, 7, 0, 721050, 7, 0, 721051, 8, 0, 786434, 5, 0, 786435, 3, 0, 786436, 3, 0, 786437, 13, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 3, 0, 786444, 13, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786450, 3, 0, 786451, 3, 0, 786452, 3, 0, 786453, 3, 0, 786454, 3, 0, 786455, 3, 0, 786456, 3, 0, 786457, 3, 0, 786458, 3, 0, 786459, 3, 0, 786460, 4, 0, 786464, 5, 0, 786465, 13, 0, 786466, 3, 0, 786467, 3, 0, 786468, 3, 0, 786469, 4, 0, 786474, 5, 0, 786475, 3, 0, 786476, 3, 0, 786477, 3, 0, 786478, 3, 0, 786479, 3, 0, 786480, 3, 0, 786481, 15, 0, 786482, 3, 0, 786483, 3, 0, 786484, 3, 0, 786485, 3, 0, 786486, 13, 0, 786487, 3, 0, 786488, 3, 0, 786489, 3, 0, 786490, 3, 0, 786491, 3, 0, 786492, 3, 0, 786493, 3, 0, 786494, 13, 0, 786495, 3, 0, 786496, 4, 0, 786508, 5, 0, 786509, 3, 0, 786510, 3, 0, 786511, 3, 0, 786512, 3, 0, 786513, 3, 0, 786514, 3, 0, 786515, 4, 0, 786519, 5, 0, 786520, 3, 0, 786521, 3, 0, 786522, 3, 0, 786523, 3, 0, 786524, 3, 0, 786525, 4, 0, 786537, 5, 0, 786538, 3, 0, 786539, 3, 0, 786540, 3, 0, 786541, 3, 0, 786542, 13, 0, 786543, 3, 0, 786544, 3, 0, 786545, 3, 0, 786546, 3, 0, 786547, 3, 0, 786548, 3, 0, 786549, 3, 0, 786550, 15, 0, 786551, 3, 0, 786552, 3, 0, 786553, 4, 0, 786563, 5, 0, 786564, 3, 0, 786565, 3, 0, 786566, 3, 0, 786567, 3, 0, 786568, 3, 0, 786569, 3, 0, 786570, 3, 0, 786571, 3, 0, 786572, 3, 0, 786573, 13, 0, 786574, 3, 0, 786575, 3, 0, 786576, 3, 0, 786577, 3, 0, 786578, 3, 0, 786579, 3, 0, 786580, 3, 0, 786581, 3, 0, 786582, 3, 0, 786583, 13, 0, 786584, 3, 0, 786585, 3, 0, 786586, 3, 0, 786587, 4, 0, 851970, 5, 0, 851971, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 3, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 851987, 3, 0, 851988, 3, 0, 851989, 3, 0, 851990, 3, 0, 851991, 3, 0, 851992, 3, 0, 851993, 3, 0, 851994, 3, 0, 851995, 3, 0, 851996, 4, 0, 852000, 5, 0, 852001, 3, 0, 852002, 3, 0, 852003, 3, 0, 852004, 15, 0, 852005, 4, 0, 852010, 5, 0, 852011, 3, 0, 852012, 3, 0, 852013, 3, 0, 852014, 3, 0, 852015, 3, 0, 852016, 3, 0, 852017, 3, 0, 852018, 3, 0, 852019, 3, 0, 852020, 3, 0, 852021, 3, 0, 852022, 3, 0, 852023, 3, 0, 852024, 3, 0, 852025, 3, 0, 852026, 3, 0, 852027, 3, 0, 852028, 3, 0, 852029, 3, 0, 852030, 3, 0, 852031, 3, 0, 852032, 4, 0, 852044, 5, 0, 852045, 3, 0, 852046, 3, 0, 852047, 3, 0, 852048, 3, 0, 852049, 3, 0, 852050, 3, 0, 852051, 4, 0, 852055, 5, 0, 852056, 3, 0, 852057, 3, 0, 852058, 3, 0, 852059, 3, 0, 852060, 3, 0, 852061, 4, 0, 852073, 5, 0, 852074, 3, 0, 852075, 3, 0, 852076, 3, 0, 852077, 3, 0, 852078, 3, 0, 852079, 3, 0, 852080, 3, 0, 852081, 3, 0, 852082, 3, 0, 852083, 3, 0, 852084, 3, 0, 852085, 3, 0, 852086, 3, 0, 852087, 3, 0, 852088, 3, 0, 852089, 4, 0, 852099, 5, 0, 852100, 3, 0, 852101, 3, 0, 852102, 3, 0, 852103, 3, 0, 852104, 3, 0, 852105, 3, 0, 852106, 3, 0, 852107, 3, 0, 852108, 3, 0, 852109, 3, 0, 852110, 3, 0, 852111, 3, 0, 852112, 3, 0, 852113, 3, 0, 852114, 3, 0, 852115, 3, 0, 852116, 3, 0, 852117, 3, 0, 852118, 3, 0, 852119, 3, 0, 852120, 3, 0, 852121, 3, 0, 852122, 3, 0, 852123, 4, 0, 917506, 5, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 3, 0, 917516, 3, 0, 917517, 3, 0, 917518, 3, 0, 917519, 3, 0, 917520, 3, 0, 917521, 3, 0, 917522, 3, 0, 917523, 3, 0, 917524, 3, 0, 917525, 3, 0, 917526, 3, 0, 917527, 3, 0, 917528, 3, 0, 917529, 3, 0, 917530, 3, 0, 917531, 3, 0, 917532, 4, 0, 917536, 5, 0, 917537, 3, 0, 917538, 3, 0, 917539, 3, 0, 917540, 3, 0, 917541, 4, 0, 917546, 5, 0, 917547, 3, 0, 917548, 3, 0, 917549, 3, 0, 917550, 3, 0, 917551, 3, 0, 917552, 3, 0, 917553, 3, 0, 917554, 3, 0, 917555, 3, 0, 917556, 3, 0, 917557, 3, 0, 917558, 3, 0, 917559, 3, 0, 917560, 3, 0, 917561, 3, 0, 917562, 3, 0, 917563, 3, 0, 917564, 3, 0, 917565, 3, 0, 917566, 3, 0, 917567, 3, 0, 917568, 4, 0, 917580, 5, 0, 917587, 4, 0, 917591, 5, 0, 917597, 4, 0, 917609, 5, 0, 917610, 3, 0, 917611, 3, 0, 917612, 3, 0, 917613, 3, 0, 917614, 3, 0, 917615, 3, 0, 917616, 3, 0, 917617, 3, 0, 917618, 3, 0, 917619, 3, 0, 917620, 3, 0, 917621, 3, 0, 917622, 3, 0, 917623, 3, 0, 917624, 3, 0, 917625, 4, 0, 983072, 5, 0, 983073, 3, 0, 983074, 3, 0, 983075, 3, 0, 983076, 3, 0, 983077, 4, 0, 983082, 5, 0, 983083, 3, 0, 983084, 3, 0, 983085, 3, 0, 983086, 3, 0, 983087, 3, 0, 983088, 3, 0, 983089, 3, 0, 983090, 3, 0, 983091, 3, 0, 983092, 3, 0, 983093, 3, 0, 983094, 3, 0, 983095, 3, 0, 983096, 3, 0, 983097, 3, 0, 983098, 3, 0, 983099, 3, 0, 983100, 3, 0, 983101, 15, 0, 983102, 3, 0, 983103, 3, 0, 983104, 4, 0, 983116, 3, 0, 983123, 4, 0, 983127, 5, 0, 983133, 4, 0, 983161, 4, 0, 1048608, 5, 0, 1048609, 3, 0, 1048610, 3, 0, 1048611, 3, 0, 1048612, 3, 0, 1048613, 4, 0, 1048618, 5, 0, 1048619, 3, 0, 1048620, 3, 0, 1048621, 3, 0, 1048622, 3, 0, 1048623, 3, 0, 1048624, 3, 0, 1048625, 3, 0, 1048626, 3, 0, 1048627, 3, 0, 1048628, 3, 0, 1048629, 3, 0, 1048630, 3, 0, 1048631, 3, 0, 1048632, 3, 0, 1048633, 3, 0, 1048634, 3, 0, 1048635, 3, 0, 1048636, 3, 0, 1048637, 3, 0, 1048638, 3, 0, 1048639, 3, 0, 1048640, 4, 0, 1048652, 3, 0, 1048659, 4, 0, 1048663, 3, 0, 1048697, 4, 0, 1114188, 3, 0, 1114195, 4, 0, 1114199, 3, 0, 1114213, 3, 0, 1114233, 4, 0, 1179724, 3, 0, 1179731, 4, 0, 1179735, 3, 0, 1179744, 4, 0, 1179749, 3, 0, 1179769, 4, 0, 1245260, 3, 0, 1245261, 3, 0, 1245262, 3, 0, 1245263, 3, 0, 1245264, 3, 0, 1245265, 3, 0, 1245266, 3, 0, 1245267, 4, 0, 1245271, 3, 0, 1245272, 3, 0, 1245273, 3, 0, 1245274, 3, 0, 1245275, 3, 0, 1245276, 3, 0, 1245277, 3, 0, 1245278, 3, 0, 1245279, 3, 0, 1245280, 4, 0, 1245285, 3, 0, 1245305, 3, 0, 1310841, 3, 0, 1376377, 3, 0, 1441913, 3, 0 )
+
+[node name="plataformamovel" parent="." instance=ExtResource( 19 )]
+position = Vector2( 3046, 324 )
+scale = Vector2( 2, 2 )
+
+[node name="Portal" type="Area2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Portal"]
+position = Vector2( 4941, 304 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 65 )
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2( 4942, 336 )
+shape = SubResource( 66 )
+
+[node name="Light2D" type="Light2D" parent="Portal"]
+position = Vector2( 4954, 316 )
+scale = Vector2( 1.24278, 1.06889 )
+texture = ExtResource( 18 )
+color = Color( 0.215686, 0.533333, 0.235294, 1 )
+energy = 1.5
+
+[node name="Inimigo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 741, 269 )
+
+[node name="Inimigo2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1446, 141 )
+
+[node name="Lava" parent="." instance=ExtResource( 16 )]
+position = Vector2( 3024, 351 )
+
+[node name="Moeda" parent="." instance=ExtResource( 4 )]
+position = Vector2( 788, 267 )
+
+[node name="Bloco9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4705, 265 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta9" type="ColorRect" parent="."]
+visible = false
+margin_left = 4567.0
+margin_top = 126.0
+margin_right = 4845.0
+margin_bottom = 337.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta9" type="Label" parent="Pergunta9"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo9_1" type="Button" parent="Pergunta9"]
+margin_left = 122.0
+margin_top = 74.0
+margin_right = 154.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "27"
+
+[node name="btn_errado9_1" type="Button" parent="Pergunta9"]
+margin_left = 128.0
+margin_top = 94.0
+margin_right = 150.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "18"
+
+[node name="btn_errado9_2" type="Button" parent="Pergunta9"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "29"
+
+[node name="btn_errado9_3" type="Button" parent="Pergunta9"]
+margin_left = 128.0
+margin_top = 129.0
+margin_right = 150.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "33"
+
+[node name="numero9" type="Label" parent="Pergunta9"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "9x3"
+
+[node name="TelaRespostaErrada9" type="ColorRect" parent="."]
+visible = false
+margin_left = 4560.0
+margin_top = 138.0
+margin_right = 4838.0
+margin_bottom = 329.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada9"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada9"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4006, 138 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta8" type="ColorRect" parent="."]
+visible = false
+margin_left = 3867.0
+margin_top = 23.0
+margin_right = 4145.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta8" type="Label" parent="Pergunta8"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo8_1" type="Button" parent="Pergunta8"]
+margin_left = 128.0
+margin_top = 131.0
+margin_right = 150.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "20"
+
+[node name="btn_errado8_1" type="Button" parent="Pergunta8"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "12"
+
+[node name="btn_errado8_2" type="Button" parent="Pergunta8"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "36"
+
+[node name="btn_errado8_3" type="Button" parent="Pergunta8"]
+margin_left = 124.0
+margin_top = 72.0
+margin_right = 153.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "15"
+
+[node name="numero8" type="Label" parent="Pergunta8"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "5x4"
+
+[node name="TelaRespostaErrada8" type="ColorRect" parent="."]
+visible = false
+margin_left = 3868.0
+margin_top = 34.0
+margin_right = 4146.0
+margin_bottom = 225.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada8"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada8"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3598, 152 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta7" type="ColorRect" parent="."]
+visible = false
+margin_left = 3460.0
+margin_top = 18.0
+margin_right = 3738.0
+margin_bottom = 229.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta7" type="Label" parent="Pergunta7"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo7_1" type="Button" parent="Pergunta7"]
+margin_left = 127.0
+margin_top = 129.0
+margin_right = 149.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "5"
+
+[node name="btn_errado7_1" type="Button" parent="Pergunta7"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "15"
+
+[node name="btn_errado7_2" type="Button" parent="Pergunta7"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "10"
+
+[node name="btn_errado7_3" type="Button" parent="Pergunta7"]
+margin_left = 128.0
+margin_top = 73.0
+margin_right = 150.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "6"
+
+[node name="numero7" type="Label" parent="Pergunta7"]
+margin_left = 159.0
+margin_top = 32.0
+margin_right = 203.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 63 )
+text = "25÷5"
+
+[node name="TelaRespostaErrada7" type="ColorRect" parent="."]
+visible = false
+margin_left = 3458.0
+margin_top = 35.0
+margin_right = 3736.0
+margin_bottom = 226.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada7"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada7"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2959, 254 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta6" type="ColorRect" parent="."]
+visible = false
+margin_left = 2821.0
+margin_top = 107.0
+margin_right = 3099.0
+margin_bottom = 318.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta6" type="Label" parent="Pergunta6"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_errado6_1" type="Button" parent="Pergunta6"]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 150.0
+margin_bottom = 148.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "10"
+
+[node name="btn_certo6_1" type="Button" parent="Pergunta6"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "5"
+
+[node name="btn_errado6_2" type="Button" parent="Pergunta6"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "8"
+
+[node name="btn_errado6_3" type="Button" parent="Pergunta6"]
+margin_left = 128.0
+margin_top = 73.0
+margin_right = 150.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "2"
+
+[node name="numero6" type="Label" parent="Pergunta6"]
+margin_left = 157.0
+margin_top = 33.0
+margin_right = 201.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 64 )
+text = "10÷2"
+
+[node name="TelaRespostaErrada6" type="ColorRect" parent="."]
+visible = false
+margin_left = 2817.0
+margin_top = 141.0
+margin_right = 3095.0
+margin_bottom = 332.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada6"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada6"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2581, 194 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta5" type="ColorRect" parent="."]
+visible = false
+margin_left = 2441.0
+margin_top = 39.0
+margin_right = 2719.0
+margin_bottom = 250.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta5" type="Label" parent="Pergunta5"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_errado5_2" type="Button" parent="Pergunta5"]
+margin_left = 128.0
+margin_top = 129.0
+margin_right = 150.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "8"
+
+[node name="btn_errado5_1" type="Button" parent="Pergunta5"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "9"
+
+[node name="btn_certo5_1" type="Button" parent="Pergunta5"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "7"
+
+[node name="btn_errado5_3" type="Button" parent="Pergunta5"]
+margin_left = 128.0
+margin_top = 73.0
+margin_right = 150.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "6"
+
+[node name="numero5" type="Label" parent="Pergunta5"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "15-8"
+
+[node name="TelaRespostaErrada5" type="ColorRect" parent="."]
+visible = false
+margin_left = 2437.0
+margin_top = 52.0
+margin_right = 2715.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada5"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada5"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1982, 252 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta4" type="ColorRect" parent="."]
+visible = false
+margin_left = 1842.0
+margin_top = 136.0
+margin_right = 2120.0
+margin_bottom = 347.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta4" type="Label" parent="Pergunta4"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo4_1" type="Button" parent="Pergunta4"]
+margin_left = 128.0
+margin_top = 130.0
+margin_right = 150.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "37"
+
+[node name="btn_errado4_1" type="Button" parent="Pergunta4"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "28"
+
+[node name="btn_errado4_2" type="Button" parent="Pergunta4"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "41"
+
+[node name="btn_errado4_3" type="Button" parent="Pergunta4"]
+margin_left = 123.0
+margin_top = 74.0
+margin_right = 155.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "33"
+
+[node name="numero4" type="Label" parent="Pergunta4"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "23+14"
+
+[node name="TelaRespostaErrada4" type="ColorRect" parent="."]
+visible = false
+margin_left = 1841.0
+margin_top = 149.0
+margin_right = 2119.0
+margin_bottom = 340.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada4"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada4"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1489, 64 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta3" type="ColorRect" parent="."]
+visible = false
+margin_left = 1358.0
+margin_top = -47.0
+margin_right = 1636.0
+margin_bottom = 164.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta3" type="Label" parent="Pergunta3"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo3_1" type="Button" parent="Pergunta3"]
+margin_left = 128.0
+margin_top = 130.0
+margin_right = 150.0
+margin_bottom = 150.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "12"
+
+[node name="btn_errado3_1" type="Button" parent="Pergunta3"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "16"
+
+[node name="btn_errado3_2" type="Button" parent="Pergunta3"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "24"
+
+[node name="btn_errado3_3" type="Button" parent="Pergunta3"]
+margin_left = 124.0
+margin_top = 74.0
+margin_right = 153.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "10"
+
+[node name="numero3" type="Label" parent="Pergunta3"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "3x4"
+
+[node name="TelaRespostaErrada3" type="ColorRect" parent="."]
+visible = false
+margin_left = 1354.0
+margin_top = -35.0
+margin_right = 1632.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada3"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada3"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1108, 139 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta2" type="ColorRect" parent="."]
+visible = false
+margin_left = 970.0
+margin_top = 20.0
+margin_right = 1248.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta2" type="Label" parent="Pergunta2"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo2_1" type="Button" parent="Pergunta2"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "10"
+
+[node name="btn_errado2_1" type="Button" parent="Pergunta2"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "12"
+
+[node name="btn_errado2_2" type="Button" parent="Pergunta2"]
+margin_left = 124.0
+margin_top = 72.0
+margin_right = 153.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "21"
+
+[node name="btn_errado2_3" type="Button" parent="Pergunta2"]
+margin_left = 128.0
+margin_top = 131.0
+margin_right = 150.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "18"
+
+[node name="numero2" type="Label" parent="Pergunta2"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "28-18"
+
+[node name="TelaRespostaErrada2" type="ColorRect" parent="."]
+visible = false
+margin_left = 960.0
+margin_top = 34.0
+margin_right = 1238.0
+margin_bottom = 225.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada2"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada2"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Bloco" parent="." instance=ExtResource( 2 )]
+position = Vector2( 604, 198 )
+scale = Vector2( 0.64, 0.64 )
+
+[node name="Pergunta1" type="ColorRect" parent="."]
+visible = false
+margin_left = 466.0
+margin_top = 87.0
+margin_right = 744.0
+margin_bottom = 298.0
+rect_pivot_offset = Vector2( 358, -34 )
+color = Color( 0, 0, 0, 0.368627 )
+
+[node name="pergunta1" type="Label" parent="Pergunta1"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 269.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 9 )
+custom_fonts/font = SubResource( 61 )
+text = "Responda corretamente
+a expressao: "
+
+[node name="btn_certo1_1" type="Button" parent="Pergunta1"]
+margin_left = 124.0
+margin_top = 72.0
+margin_right = 153.0
+margin_bottom = 95.0
+rect_pivot_offset = Vector2( -327, 33 )
+theme = SubResource( 42 )
+custom_colors/font_color = Color( 0.117647, 0.564706, 1, 1 )
+custom_fonts/font = SubResource( 67 )
+text = "18"
+
+[node name="btn_errado1_1" type="Button" parent="Pergunta1"]
+margin_left = 128.0
+margin_top = 92.0
+margin_right = 150.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0.501961, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "16"
+
+[node name="btn_errado1_2" type="Button" parent="Pergunta1"]
+margin_left = 128.0
+margin_top = 111.0
+margin_right = 150.0
+margin_bottom = 131.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "28"
+
+[node name="btn_errado1_3" type="Button" parent="Pergunta1"]
+margin_left = 128.0
+margin_top = 131.0
+margin_right = 150.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( -252, -68 )
+theme = SubResource( 49 )
+custom_colors/font_color = Color( 0.803922, 0.360784, 0.360784, 1 )
+custom_fonts/font = SubResource( 50 )
+text = "22"
+
+[node name="numero" type="Label" parent="Pergunta1"]
+margin_left = 158.0
+margin_top = 34.0
+margin_right = 202.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0.670588, 0.662745, 0.580392, 1 )
+custom_fonts/font = SubResource( 61 )
+text = "11+7"
+
+[node name="TelaRespostaErrada" type="ColorRect" parent="."]
+visible = false
+margin_left = 466.0
+margin_top = 99.0
+margin_right = 744.0
+margin_bottom = 290.0
+rect_pivot_offset = Vector2( -1012, -99 )
+theme = SubResource( 51 )
+color = Color( 0, 0, 0, 0.447059 )
+
+[node name="respostaErrada" type="Label" parent="TelaRespostaErrada"]
+margin_left = 45.0
+margin_top = 22.0
+margin_right = 222.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0.14902, 0.14902, 1 )
+custom_fonts/font = SubResource( 62 )
+text = "RESPOSTA ERRADA"
+
+[node name="continuar" type="Button" parent="TelaRespostaErrada"]
+margin_left = 56.0
+margin_top = 121.0
+margin_right = 224.0
+margin_bottom = 138.0
+rect_pivot_offset = Vector2( -367, 112 )
+theme = SubResource( 35 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.894118, 0.890196, 0.0588235, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 36 )
+text = "Continuar"
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 301, 258 )
+can_double_jump = false
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2( 50, -30 )
+current = true
+zoom = Vector2( 0.6, 0.6 )
+limit_left = 0
+limit_top = -50
+limit_right = 5000
+limit_bottom = 450
+editor_draw_screen = false
+editor_draw_limits = true
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="Inimigo3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4425, 332 )
+
+[node name="Inimigo4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2574, 237 )
+
+[node name="Inimigo5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3553, 205 )
+
+[node name="Inimigo6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3827, 173 )
+
+[node name="Inimigo7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2881, 302 )
+
+[node name="Inimigo8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1975, 339 )
+
+[node name="Inimigo9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1138, 205 )
+
+[node name="Moeda7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1124.89, 381.151 )
+scale = Vector2( 0.000729, 0.000729 )
+
+[node name="Moeda6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2028, 320 )
+
+[node name="Moeda5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2991, 290 )
+
+[node name="Moeda4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2643, 223 )
+
+[node name="Moeda3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1630, 25 )
+
+[node name="Moeda2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1169, 199 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 1, 0 )
+color = Color( 0.0235294, 0.141176, 0.258824, 1 )
+
+[node name="AudioTema" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -15.0
+
+[node name="AudioAcertoPerguntas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -15.0
+
+[node name="AudioMorte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -5.0
+
+[node name="AudioPortal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = -5.0
+
+[node name="AudioMoeda" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -15.0
+
+[node name="AudioMatou" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -10.0
+
+[node name="AudioQuebrouBloco" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -2.0
+
+[node name="AudioErrouPergunta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -5.0
+
+[node name="AudioLava" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+
+[connection signal="ready" from="." to="." method="_on_Level_ready"]
+[connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
+[connection signal="matou" from="Inimigo" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo2" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Lava" to="." method="_on_Lava_matou"]
+[connection signal="pegou_moeda" from="Moeda" to="." method="_on_Moeda_pegou_moeda"]
+[connection signal="quebrou" from="Bloco9" to="." method="_on_Bloco9_quebrou"]
+[connection signal="pressed" from="Pergunta9/btn_certo9_1" to="." method="_on_btn_certo9_1_pressed"]
+[connection signal="pressed" from="Pergunta9/btn_errado9_1" to="." method="_on_btn_errado9_1_pressed"]
+[connection signal="pressed" from="Pergunta9/btn_errado9_2" to="." method="_on_btn_errado9_2_pressed"]
+[connection signal="pressed" from="Pergunta9/btn_errado9_3" to="." method="_on_btn_errado9_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada9/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco8" to="." method="_on_Bloco8_quebrou"]
+[connection signal="pressed" from="Pergunta8/btn_certo8_1" to="." method="_on_btn_certo8_1_pressed"]
+[connection signal="pressed" from="Pergunta8/btn_errado8_1" to="." method="_on_btn_errado8_1_pressed"]
+[connection signal="pressed" from="Pergunta8/btn_errado8_2" to="." method="_on_btn_errado8_2_pressed"]
+[connection signal="pressed" from="Pergunta8/btn_errado8_3" to="." method="_on_btn_errado8_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada8/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco7" to="." method="_on_Bloco7_quebrou"]
+[connection signal="pressed" from="Pergunta7/btn_certo7_1" to="." method="_on_btn_certo7_1_pressed"]
+[connection signal="pressed" from="Pergunta7/btn_errado7_1" to="." method="_on_btn_errado7_1_pressed"]
+[connection signal="pressed" from="Pergunta7/btn_errado7_2" to="." method="_on_btn_errado7_2_pressed"]
+[connection signal="pressed" from="Pergunta7/btn_errado7_3" to="." method="_on_btn_errado7_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada7/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco6" to="." method="_on_Bloco6_quebrou"]
+[connection signal="pressed" from="Pergunta6/btn_errado6_1" to="." method="_on_btn_errado6_1_pressed"]
+[connection signal="pressed" from="Pergunta6/btn_certo6_1" to="." method="_on_btn_certo6_1_pressed"]
+[connection signal="pressed" from="Pergunta6/btn_errado6_2" to="." method="_on_btn_errado6_2_pressed"]
+[connection signal="pressed" from="Pergunta6/btn_errado6_3" to="." method="_on_btn_errado6_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada6/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco5" to="." method="_on_Bloco5_quebrou"]
+[connection signal="pressed" from="Pergunta5/btn_errado5_2" to="." method="_on_btn_errado5_2_pressed"]
+[connection signal="pressed" from="Pergunta5/btn_errado5_1" to="." method="_on_btn_errado5_1_pressed"]
+[connection signal="pressed" from="Pergunta5/btn_certo5_1" to="." method="_on_btn_certo5_1_pressed"]
+[connection signal="pressed" from="Pergunta5/btn_errado5_3" to="." method="_on_btn_errado5_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada5/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco4" to="." method="_on_Bloco4_quebrou"]
+[connection signal="pressed" from="Pergunta4/btn_certo4_1" to="." method="_on_btn_certo4_1_pressed"]
+[connection signal="pressed" from="Pergunta4/btn_errado4_1" to="." method="_on_btn_errado4_1_pressed"]
+[connection signal="pressed" from="Pergunta4/btn_errado4_2" to="." method="_on_btn_errado4_2_pressed"]
+[connection signal="pressed" from="Pergunta4/btn_errado4_3" to="." method="_on_btn_errado4_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada4/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco3" to="." method="_on_Bloco3_quebrou"]
+[connection signal="pressed" from="Pergunta3/btn_certo3_1" to="." method="_on_btn_certo3_1_pressed"]
+[connection signal="pressed" from="Pergunta3/btn_errado3_1" to="." method="_on_btn_errado3_1_pressed"]
+[connection signal="pressed" from="Pergunta3/btn_errado3_2" to="." method="_on_btn_errado3_2_pressed"]
+[connection signal="pressed" from="Pergunta3/btn_errado3_3" to="." method="_on_btn_errado3_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada3/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco2" to="." method="_on_Bloco2_quebrou"]
+[connection signal="pressed" from="Pergunta2/btn_certo2_1" to="." method="_on_btn_certo2_1_pressed"]
+[connection signal="pressed" from="Pergunta2/btn_errado2_1" to="." method="_on_btn_errado2_1_pressed"]
+[connection signal="pressed" from="Pergunta2/btn_errado2_2" to="." method="_on_btn_errado2_2_pressed"]
+[connection signal="pressed" from="Pergunta2/btn_errado2_3" to="." method="_on_btn_errado2_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada2/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="quebrou" from="Bloco" to="." method="_on_Bloco_quebrou"]
+[connection signal="pressed" from="Pergunta1/btn_certo1_1" to="." method="_on_btn_certo1_1_pressed"]
+[connection signal="pressed" from="Pergunta1/btn_errado1_1" to="." method="_on_btn_errado1_1_pressed"]
+[connection signal="pressed" from="Pergunta1/btn_errado1_2" to="." method="_on_btn_errado1_2_pressed"]
+[connection signal="pressed" from="Pergunta1/btn_errado1_3" to="." method="_on_btn_errado1_3_pressed"]
+[connection signal="pressed" from="TelaRespostaErrada/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="morreu" from="Player" to="." method="_on_Player_morreu"]
+[connection signal="matou" from="Inimigo3" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo4" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo5" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo6" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo7" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo8" to="." method="_on_Inimigo_matou"]
+[connection signal="matou" from="Inimigo9" to="." method="_on_Inimigo_matou"]
+[connection signal="pegou_moeda" from="Moeda7" to="." method="_on_Moeda_pegou_moeda"]
+[connection signal="pegou_moeda" from="Moeda6" to="." method="_on_Moeda_pegou_moeda"]
+[connection signal="pegou_moeda" from="Moeda5" to="." method="_on_Moeda_pegou_moeda"]
+[connection signal="pegou_moeda" from="Moeda4" to="." method="_on_Moeda_pegou_moeda"]
+[connection signal="pegou_moeda" from="Moeda3" to="." method="_on_Moeda_pegou_moeda"]
+[connection signal="pegou_moeda" from="Moeda2" to="." method="_on_Moeda_pegou_moeda"]

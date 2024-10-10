@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/portalRings2.png-e7f9fe1a09621a1a5801da43275164ff.res"
+group_file="res://.png"
+valid=true
+[deps]
+
+
+source_file="res://Sprites/portalRings2.png"
+dest_files=[ "res://.import/portalRings2.png-e7f9fe1a09621a1a5801da43275164ff.res" ]
+
+[params]
+
+atlas_file="res://.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

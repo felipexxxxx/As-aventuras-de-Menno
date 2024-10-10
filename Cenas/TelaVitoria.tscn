@@ -1,0 +1,233 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Sprites/font/04B_30__.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/Sons/sfx-victory1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sprites/simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png" type="Texture" id=3]
+[ext_resource path="res://TelaVitoria background.jpg" type="Texture" id=4]
+[ext_resource path="res://Sprites/Cave Tileset/Cave Tileset/Gray_Tile_Terrain (16 x 16).png" type="Texture" id=5]
+
+[sub_resource type="GDScript" id=37]
+script/source = "extends Node2D
+var pontosFinais = 0
+
+func _on_TelaVitoria_ready():
+	$AudioVitoria.play()
+	pontosFinais = Global.pontos
+	$Label.text = \"Pontuacao final: \" 
+	$Label2.text = str(Global.pontos)
+	Global.life = 4
+
+
+
+
+func _on_Button_pressed():
+	Global.pontos = 0
+	get_tree().change_scene(\"res://Cenas/Level.tscn\")
+
+func _on_Button2_pressed():
+	get_tree().change_scene(\"res://Cenas/TelaInicial.tscn\")
+
+
+func _on_Button3_pressed():
+	get_tree().quit()
+"
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Theme" id=6]
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+outline_color = Color( 0.972549, 1, 1, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=33]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=34]
+0/name = "Gray_Tile_Terrain (16 x 16).png 0"
+0/texture = ExtResource( 5 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 320, 64, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 33 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 33 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=36]
+0/name = "simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 64, 48, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 448, 64, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "simple_2d_mage___sprite_sheet_by_mackieftw_d8g6gjm.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 16, 112, 128 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[node name="TelaVitoria" type="Node2D"]
+script = SubResource( 37 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 489, 163 )
+scale = Vector2( 0.2, 0.21 )
+texture = ExtResource( 4 )
+offset = Vector2( 110, 657.143 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 364.0
+margin_top = 253.0
+margin_right = 668.0
+margin_bottom = 336.0
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_right = 304.0
+margin_bottom = 25.0
+theme = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Tela inicial"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_top = 29.0
+margin_right = 304.0
+margin_bottom = 54.0
+theme = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.733333, 0.160784, 0.831373, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Sair"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 330.0
+margin_top = 185.0
+margin_right = 732.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 176, 78 )
+custom_fonts/font = SubResource( 10 )
+text = "Pontuacao final: "
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 696.0
+margin_top = 190.0
+margin_right = 728.0
+margin_bottom = 218.0
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 18.0
+margin_right = 907.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 35 )
+text = "PARABENS, VOCE VENCEU!"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 34 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2( 8, 12 )
+tile_set = SubResource( 36 )
+format = 1
+tile_data = PoolIntArray( 458756, 2, 0 )
+
+[node name="AudioVitoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -9.0
+
+[connection signal="ready" from="." to="." method="_on_TelaVitoria_ready"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
